@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.navbar{
+  background-color: #fff;
+}
+.navbar .navbar-brand{
+  font-size: 1.9rem;
+  color: #565387;
+}
+.navbar .navbar-brand:hover{
+  color: purple;
+}
+ .menu_active{
+  font-weight: bold;
+  border-bottom: 1px solid #565387;
+}
+.navbar .nav-item{
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+.navbar .nav-item :hover{
+  color: #3498db;
+}
+.btn-get-started{
+  border: 1px solid;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: lightblue;
+}
+strong{
+ color: #565387;
+}
+.manage{
+  padding-top: 30px;
+}
+.manage h1{
+  text-align: left;
+  font-weight: 500;
+}
+.manage h3{
+    text-align: left;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.btn-get-started span{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+h1{
+  text-align: center;
+  font-size: 25px;
+  
+}
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 991px){
+  .navbar-brand{
+    font-size: 1.5rem;
+  }
+  .menu_active{}
+}
