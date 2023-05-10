@@ -1,27 +1,39 @@
 
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-import Home from './Home';
-import Find from './Find';
-import Post from './Post';
-import Community from './Community';
-import About from './About';
-import Login from './Login';
-import Navbar from './Navbar';
-import {Routes, Route} from "react-router-dom";
+import Public from './Components/Public'
+import Layouts from "./Components/Layouts"
+import Login from "./features/auth/Login";
+import DashLayout from "./Components/DashLayout"
+import Welcome from "./features/auth/Welcome"
+import ProjectList from "./features/Projects/ProjectList"
+import UserList from "./features/User/UserList";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 const App = () => {
   return (
     <div className="App">
-    
-    <Navbar />
+    <BrowserRouter>
       <Routes>
-        <Route  path='/' element={<Home/> }/>
-        <Route  path='/find' element={<Find/> }/>
-        <Route  path='/post' element={<Post/> }/>
-        <Route  path='/community' element={<Community/> }/>
-        <Route  path='/about' element={<About/> }/>
-        <Route  path='/login' element={<Login/> }/>
+        <Route path="/" element={<Layouts />}>
+          <Route index element={<Public />} />
+          <Route path="Login" element={<Login />} />
+
+          <Route path="dash" element={<DashLayout />}>
+            <Route index element={< Welcome />} />
+
+            <Route path="project">
+              <Routes index element={<ProjectList />} />
+            </Route>
+
+            <Route path="user">
+              <Routes index element={<UserList />} />
+            </Route>
+
+
+          </Route>{/* End Dash */}
+
+        </Route>
       </Routes>
+
+      </BrowserRouter>
     </div>
   );
 };
